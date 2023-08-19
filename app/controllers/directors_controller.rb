@@ -12,4 +12,12 @@ class DirectorsController < ApplicationController
 
     render({ :template => "director_templates/details" })
   end
+
+  def junior
+    youngest_director_record = Director.order({ :dob => :desc }).at(0)
+    @the_director = youngest_director_record
+    
+    render({ :template => "director_templates/youngest" })
+  end
+
 end
