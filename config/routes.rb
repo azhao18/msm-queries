@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get("/directors/youngest", { :controller => "directors", :action => "junior" })
 
+  get("/directors/youngest", { :controller => "directors", :action => "senior" })
+
   get("/directors/:the_id", { :controller => "directors", :action => "show" })
 
   get("/actors", { :controller => "actors", :action => "index" })
