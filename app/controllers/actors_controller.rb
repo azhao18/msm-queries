@@ -10,6 +10,6 @@ class ActorsController < ApplicationController
 
     @the_movie = matching_records.at(0)
 
-    render({ :template => "movie_templates/details" })
+    render({ :template => "actor_templates/details" })
   end
 end
