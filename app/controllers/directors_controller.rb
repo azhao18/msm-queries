@@ -21,7 +21,7 @@ class DirectorsController < ApplicationController
   end
 
   def senior
-    eldest_director_record = Director.order({ :dob => :asc }).at(0)
+    eldest_director_record = Director.where.not({ :dob => nil }).order({ :dob => :asc }).at(0)
     @the_director = eldest_director_record
     
     render({ :template => "director_templates/eldest" })
